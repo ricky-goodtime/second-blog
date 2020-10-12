@@ -10,16 +10,12 @@
         <h1><a href="/">Ricky Blog</a></h1>
     </div>
 
-    <div>
-        <p>published: ...</p>
-        <h2><a href="">My first post</a></h2>
-        <p>1つ目の投稿</p>
-    </div>
-
-    <div>
-        <p>published: ...</p>
-        <h2><a href="">My second post</a></h2>
-        <p>2つ目の投稿</p>
-    </div>
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 </body>
 </html>
